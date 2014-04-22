@@ -5,17 +5,17 @@
 
 !/.emacs.d
 /.emacs.d/*
-!/.emacs.d/google-coding-style.el
 !/.emacs.d/customize.el
+!/.emacs.d/google-coding-style.el
 !/.emacs.d/init.el
 !/.emacs.d/preferences.el
 
-!/.hgrc
-!/.gitignore
 !/.Xmodmap
 !/.bashrc
 !/.bashrc-machine
+!/.gitconfig
+!/.gitignore
 !/.hgglobalignore
+!/.hgrc
 !/.shell-common.sh
 !/.zshrc
-!/.gitconfig
