@@ -8,6 +8,7 @@
       '(color-theme-approximate
         color-theme-solarized
         color-theme 
+        gitignore-mode
         go-mode
         js2-mode
         markdown-mode
