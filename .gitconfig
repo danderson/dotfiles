@@ -6,6 +6,8 @@ di = diff
 co = checkout
 sb = show-branch
 cp = cherry-pick
+out = !git fetch && git log FETCH_HEAD..
+in  = !git fetch && git log ..FETCH_HEAD
 
 [core]
 editor = nano
