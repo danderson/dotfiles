@@ -13,9 +13,11 @@
 !/.Xmodmap
 !/.bashrc
 !/.bashrc-machine
+!/.emacs-machine.el
 !/.gitconfig
 !/.gitignore
 !/.hgglobalignore
 !/.hgrc
 !/.shell-common.sh
 !/.zshrc
+!/.zshrc-machine
