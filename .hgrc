@@ -1,0 +1,52 @@
+# -*- mode: conf -*-
+
+[alias]
+lf = st -cmarnd
+ll = log --graph -l10
+
+[defaults]
+annotate = -nu
+diff = -p
+heads = --style default
+outgoing = --graph
+qimport = --git
+qrefresh = --git
+serve = -v
+
+[diff]
+git = 1
+
+[email]
+from = David Anderson <dave@natulte.net>
+
+[extensions]
+bookmarks=
+color=
+graphlog=
+highlight=
+purge=
+rebase=
+record=
+schemes=
+
+[pager]
+pager = LESS='FSRX' less
+
+[smtp]
+host = localhost
+
+[ui]
+ignore = ~/.hgglobalignore
+style = compact
+username = David Anderson <dave@natulte.net>
+
+[web]
+cacerts = /etc/ssl/certs/ca-certificates.crt
+
+[auth]
+google.prefix = code.google.com/p/
+google.username = dave@natulte.net
+google.schemes = https
+bb.prefix = bitbucket.org/danderson/
+bb.username = danderson
+bb.schemes = https

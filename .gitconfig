@@ -1,0 +1,19 @@
+[alias]
+st = status
+br = branch
+ci = commit
+di = diff
+co = checkout
+sb = show-branch
+cp = cherry-pick
+
+[core]
+editor = nano
+excludesfile = ~/.hgglobalignore
+
+[color]
+ui = auto
+
+[user]
+name = David Anderson
+email = dave@natulte.net
