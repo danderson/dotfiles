@@ -19,3 +19,6 @@ ui = auto
 [user]
 name = David Anderson
 email = dave@natulte.net
+
+[push]
+default = matching
