@@ -4,7 +4,7 @@ alias vi=vim
 alias e='emacsclient -n'
 
 export PAGER='less -X'
-export EDITOR='emacsclient -t'
+export EDITOR='emacsclient'
 export LESS='-R'
 
 export PATH=~/bin:~/go/bin:~/.local/bin:~/.gem/ruby/1.8/bin:$PATH
