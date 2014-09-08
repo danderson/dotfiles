@@ -19,6 +19,7 @@
  '(font-lock-maximum-decoration t)
  '(foreground-color "#839496")
  '(global-auto-revert-mode t)
+ '(gofmt-command "goimports")
  '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
