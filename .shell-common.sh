@@ -1,13 +1,14 @@
 # Stuff sourced by both bash and zsh (see bashrc/zshrc)
-
-alias vi=vim
-alias e='emacsclient -n'
+#
+# NOTE that this is sourced for non-interactive shells, keep it free
+# of non-interactive stuff.
 
 export PAGER='less -X'
 export EDITOR='emacsclient'
 export LESS='-R'
+export TZ="America/Los_Angeles"
 
-export PATH=~/bin:~/go/bin:~/.local/bin:~/.gem/ruby/1.8/bin:$PATH
+export PATH=~/bin:~/go/bin::$PATH
 export GOPATH=~/hack/go
 
 # Per-machine stuff
