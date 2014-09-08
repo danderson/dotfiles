@@ -26,7 +26,9 @@
   (set-selection-coding-system 'compound-text-with-extensions)
   ;; Set the default font face to something small and beautiful and
   ;; FontConfiggy
-  (set-face-font 'default "Monospace-11"))
+  (set-face-font 'default "Monospace-11")
+  ;; Set the execution path to match $PATH in the shell.
+  (exec-path-from-shell-initialize))
 
 ;; Pretty pretty colors.
 (setq default-frame-alist
