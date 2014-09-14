@@ -3,7 +3,6 @@
 # /etc/zprofile resets PATH, among other things, so we need to
 # re-source.
 source ~/.zshenv
-
 # In the case of an interactive, non-login shell, this leads to
 # repetitions in PATH. Fortunately, zsh to the rescue.
 export -U PATH=$PATH
@@ -15,6 +14,8 @@ setopt notify
 unsetopt beep
 # Show non-zero return codes
 setopt printexitvalue
+
+alias ls='ls --color'
 
 ### Completion
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -32,7 +33,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 # Allow concurrent writing to the history file, write with timestamps,
 # suppress duplicate commands.
-setopt appendhistory extended_history hist_save_no_dups
+setopt appendhistory extended_history hist_save_no_dups histignorespace
 
 ### Keybindings - why are these even still a thing? Stupid defaults.
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
