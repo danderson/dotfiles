@@ -16,6 +16,7 @@ unsetopt beep
 setopt printexitvalue
 
 alias ls='ls --color'
+alias e='emacsclient -n'
 
 ### Completion
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
