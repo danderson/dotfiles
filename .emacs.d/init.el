@@ -8,6 +8,7 @@
       '(color-theme-approximate
         color-theme-solarized
         color-theme 
+        exec-path-from-shell
         gitignore-mode
         go-mode
         js2-mode
