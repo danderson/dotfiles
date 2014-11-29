@@ -8,7 +8,7 @@ export EDITOR='emacsclient'
 export LESS='-R'
 export TZ="America/Los_Angeles"
 
-export PATH=~/bin:~/go/bin:$PATH
+export PATH=~/bin:~/hack/go/bin:$PATH
 export GOPATH=~/hack/go
 
 # Per-machine stuff
