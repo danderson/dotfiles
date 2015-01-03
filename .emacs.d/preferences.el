@@ -48,7 +48,6 @@
 (global-unset-key "\C-x\C-z")
 
 (global-set-key [(control backspace)] 'kill-this-buffer)
-;; Save early, save often, avoir carpal tunnel while doing so.
 (global-set-key [(meta l)] 'goto-line)
 (global-set-key [(meta c)] 'comment-region)
 (global-set-key [(meta u)] 'uncomment-region)
