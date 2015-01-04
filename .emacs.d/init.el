@@ -14,8 +14,8 @@
         js2-mode
         markdown-mode
         protobuf-mode
-        yaml-mode
-        yasnippet))
+        writegood-mode
+        yaml-mode))
 
 ;; An implementation of filter, since elisp is from the past and
 ;; doesn't have one.
