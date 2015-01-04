@@ -9,6 +9,9 @@
 
 (add-hook 'before-save-hook 'gofmt-before-save)
 
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'writegood-mode)
+
 (autoload 'color-theme-approximate-on "color-theme-approximate")
 (color-theme-approximate-on)
 
