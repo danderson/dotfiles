@@ -10,13 +10,12 @@
  '(c++-mode-hook (quote (da-guess-c-style)))
  '(c-mode-hook (quote (da-guess-c-style)))
  '(c-tab-always-indent t)
- '(column-number-mode t)
  '(confirm-kill-emacs (quote y-or-n-p))
  '(cursor-color "#839496")
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
  '(font-lock-global-modes t)
  '(font-lock-maximum-decoration t)
@@ -55,6 +54,8 @@
  '(transient-mark-mode t)
  '(visible-bell t)
  '(yas-global-mode t nil (yasnippet)))
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

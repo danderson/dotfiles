@@ -112,6 +112,9 @@ function make_prompt() {
 }
 PROMPT="$(make_prompt)"
 
+alias g=git
+alias drun='sudo docker run --rm -it -v `pwd`:/hostfs'
+
 ### Machine specializations
 if [ -f ~/.zshrc-machine ]; then
   source ~/.zshrc-machine

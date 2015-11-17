@@ -3,9 +3,15 @@
 
 (load "~/.emacs.d/google-coding-style.el")
 
-;; Override js-mode with js2-mode.
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+;; For JSX and javascript crap, you need NPM stuff installed.
+;;
+;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
+
+(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+
+
 
 (add-hook 'before-save-hook 'gofmt-before-save)
 
@@ -54,6 +60,24 @@
 (global-set-key [(meta l)] 'goto-line)
 (global-set-key [(meta c)] 'comment-region)
 (global-set-key [(meta u)] 'uncomment-region)
+
+(require 'flycheck)
+(global-flycheck-mode)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode. Adjust indents"
+  ;;; http://web-mode.org/
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "js")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
 
 ;; If a local configuration file is available, load that right at the
 ;; end to override/complement settings.

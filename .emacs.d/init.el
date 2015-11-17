@@ -1,6 +1,8 @@
 ;; Initialize packages, with just Melpa as a source.
 (require 'package)
-(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives
+      '(("melpa" . "http://melpa.milkbox.net/packages/")
+        ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
 ;; These are the packages that I want present on all machines.
@@ -9,11 +11,14 @@
         color-theme-solarized
         color-theme 
         exec-path-from-shell
+        flycheck
         gitignore-mode
         go-mode
         js2-mode
+        json-mode
         markdown-mode
         protobuf-mode
+        web-mode
         writegood-mode
         yaml-mode))
 
