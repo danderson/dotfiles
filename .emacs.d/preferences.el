@@ -18,6 +18,8 @@
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'writegood-mode)
 
+(color-theme-initialize)
+(color-theme-solarized)
 (autoload 'color-theme-approximate-on "color-theme-approximate")
 (color-theme-approximate-on)
 

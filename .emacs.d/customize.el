@@ -52,8 +52,7 @@
  '(tool-bar-mode nil)
  '(tramp-default-method "sshx")
  '(transient-mark-mode t)
- '(visible-bell t)
- '(yas-global-mode t nil (yasnippet)))
+ '(visible-bell t))
 
 
 (custom-set-faces
