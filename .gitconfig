@@ -25,3 +25,5 @@ email = dave@natulte.net
 
 [push]
 default = matching
+[http]
+	cookiefile = /home/dave/.gitcookies
