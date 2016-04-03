@@ -1,5 +1,3 @@
-### Basics
-
 # /etc/zprofile resets PATH, among other things, so we need to
 # re-source.
 source ~/.zshenv
@@ -7,91 +5,97 @@ source ~/.zshenv
 # repetitions in PATH. Fortunately, zsh to the rescue.
 export -U PATH=$PATH
 
-# Notify asynchronously of background job completion, don't
-# synchronize on prompt display.
-setopt notify
-# NO BEEPING!
-unsetopt beep
-# Show non-zero return codes
-setopt printexitvalue
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-alias ls='ls --color'
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(colored-man-pages docker git go mosh)
+
+# User configuration
+
+export -U PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
+
+if [[ ! -d $ZSH ]]; then
+    echo "Missing oh-my-zsh, trying to clone..."
+    if ! git clone git://github.com/robbyrussell/oh-my-zsh.git $ZSH; then
+        echo "Clone failed, shell is unconfigured :("
+    fi
+fi
+if [[ -d $ZSH ]]; then
+    source $ZSH/oh-my-zsh.sh
+fi
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
 alias e='emacsclient -n'
-
-### Completion
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' expand prefix suffix
-zstyle ':completion:*' ignore-parents parent
-zstyle ':completion:*' max-errors 2
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' verbose true
-autoload -Uz compinit
-compinit
-
-### History management
-HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
-# Allow concurrent writing to the history file, write with timestamps,
-# suppress duplicate commands.
-setopt appendhistory extended_history hist_save_no_dups histignorespace
-
-### Keybindings - why are these even still a thing? Stupid defaults.
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-  function zle-line-init() {
-    echoti smkx
-  }
-  function zle-line-finish() {
-    echoti rmkx
-  }
-  zle -N zle-line-init
-  zle -N zle-line-finish
-fi
-
-bindkey -e                                            # Use emacs key bindings
-
-bindkey '\ew' kill-region                             # [Esc-w] - Kill from the cursor to the mark
-bindkey -s '\el' 'ls\n'                               # [Esc-l] - run command: ls
-bindkey '^r' history-incremental-search-backward      # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
-if [[ "${terminfo[kpp]}" != "" ]]; then
-    bindkey "${terminfo[kpp]}" up-line-or-history       # [PageUp] - Up a line of history
-fi
-if [[ "${terminfo[knp]}" != "" ]]; then
-    bindkey "${terminfo[knp]}" down-line-or-history     # [PageDown] - Down a line of history
-fi
-
-if [[ "${terminfo[kcuu1]}" != "" ]]; then
-    bindkey "${terminfo[kcuu1]}" up-line-or-search      # start typing + [Up-Arrow] - fuzzy find history forward
-fi
-if [[ "${terminfo[kcud1]}" != "" ]]; then
-    bindkey "${terminfo[kcud1]}" down-line-or-search    # start typing + [Down-Arrow] - fuzzy find history backward
-fi
-
-if [[ "${terminfo[khome]}" != "" ]]; then
-    bindkey "${terminfo[khome]}" beginning-of-line      # [Home] - Go to beginning of line
-fi
-if [[ "${terminfo[kend]}" != "" ]]; then
-    bindkey "${terminfo[kend]}"  end-of-line            # [End] - Go to end of line
-fi
-
-bindkey ' ' magic-space                               # [Space] - do history expansion
-
-bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
-bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
-
-if [[ "${terminfo[kcbt]}" != "" ]]; then
-    bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
-fi
-
-bindkey '^?' backward-delete-char                     # [Backspace] - delete backward
-if [[ "${terminfo[kdch1]}" != "" ]]; then
-    bindkey "${terminfo[kdch1]}" delete-char            # [Delete] - delete forward
-else
-    bindkey "^[[3~" delete-char
-    bindkey "^[3;5~" delete-char
-    bindkey "\e[3~" delete-char
-fi
-
+alias g='git'
+alias sc='systemctl'
 
 ### Prompt
 function make_prompt() {
@@ -111,9 +115,6 @@ function make_prompt() {
   echo "${time} ${user}${at}${host} ${dir} » "
 }
 PROMPT="$(make_prompt)"
-
-alias g=git
-alias drun='sudo docker run --rm -it -v `pwd`:/hostfs'
 
 ### Machine specializations
 if [ -f ~/.zshrc-machine ]; then
