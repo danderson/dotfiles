@@ -17,6 +17,7 @@
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
+ '(exec-path-from-shell-variables (quote ("PATH" "MANPATH" "GOPATH")))
  '(font-lock-global-modes t)
  '(font-lock-maximum-decoration t)
  '(foreground-color "#839496")
