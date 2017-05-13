@@ -19,6 +19,7 @@
 !/.hgglobalignore
 !/.hgrc
 !/.npm-global/.empty
+!/.npmrc
 !/.shell-common.sh
 !/.zshrc
 !/.zshrc-machine
