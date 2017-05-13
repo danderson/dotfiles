@@ -43,6 +43,9 @@
  '(org-publish-use-timestamps-flag nil)
  '(org-src-fontify-natively t)
  '(org-startup-folded nil)
+ '(package-selected-packages
+   (quote
+    (company-go company company-ansible tide lua-mode yaml-mode writegood-mode web-mode protobuf-mode markdown-mode json-mode js2-mode go-mode gitignore-mode flycheck exec-path-from-shell color-theme-solarized color-theme-approximate)))
  '(query-replace-lazy-highlight nil)
  '(require-final-newline t)
  '(scroll-bar-mode nil)

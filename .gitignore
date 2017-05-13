@@ -18,6 +18,7 @@
 !/.gitignore
 !/.hgglobalignore
 !/.hgrc
+!/.npm-global/.empty
 !/.shell-common.sh
 !/.zshrc
 !/.zshrc-machine

@@ -7,9 +7,12 @@
 
 ;; These are the packages that I want present on all machines.
 (setq da-desired-packages
-      '(color-theme-approximate
+      '(color-theme 
+        color-theme-approximate
         color-theme-solarized
-        color-theme 
+        company
+        company-ansible
+        company-go
         exec-path-from-shell
         flycheck
         gitignore-mode
@@ -18,9 +21,12 @@
         json-mode
         markdown-mode
         protobuf-mode
+        tide
         web-mode
         writegood-mode
         yaml-mode))
+
+;; company company-ansible company-go? tide
 
 ;; An implementation of filter, since elisp is from the past and
 ;; doesn't have one.
