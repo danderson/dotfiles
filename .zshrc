@@ -96,6 +96,9 @@ fi
 alias e='emacsclient -n'
 alias g='git'
 alias sc='systemctl'
+alias k='kubectl'
+alias s='systemctl --user'
+alias kp='kubectl --context=prod'
 
 ### Prompt
 function make_prompt() {
@@ -121,4 +124,8 @@ if [ -f ~/.zshrc-machine ]; then
   source ~/.zshrc-machine
 else
   true
+fi
+
+if [ -f /usr/bin/direnv ]; then
+  eval "$(direnv hook zsh)"
 fi

@@ -8,7 +8,14 @@ export EDITOR='emacsclient'
 export LESS='-R'
 export TZ="America/Los_Angeles"
 
-export PATH=~/bin:~/hack/go/bin:$PATH
+# Make locally installed Gem binaries visible. Of course Gem doesn't
+# have an easy way to do this, and you have to invoke a handwritten
+# script to getthe information you need.
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+export PATH=~/bin:~/hack/go/bin:~/.npm-global/bin:$PATH
 export GOPATH=~/hack/go
 
 # Per-machine stuff

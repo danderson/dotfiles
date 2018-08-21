@@ -110,6 +110,9 @@
         ad-do-it)
     ad-do-it))
 
+;; Enable direnv support globally as a minor mode.
+(direnv-mode)
+
 ;; If a local configuration file is available, load that right at the
 ;; end to override/complement settings.
 (if (file-regular-p "~/.emacs-machine.el")
