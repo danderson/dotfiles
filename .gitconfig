@@ -26,4 +26,7 @@ email = dave@natulte.net
 [push]
 default = matching
 [http]
-	cookiefile = /home/dave/.gitcookies
+cookiefile = /home/dave/.gitcookies
+
+[includeIf "gitdir:~/tock"]
+path = ~/tock/gitconfig.inc
